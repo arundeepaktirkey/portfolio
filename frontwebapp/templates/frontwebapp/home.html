@@ -1,4 +1,5 @@
 {% extends 'main.html' %}
+{% load my_custom_tags %}
 {% block content %}
 <div id="fh5co-about" class="animate-box">
     <div class="container">
@@ -50,6 +51,42 @@
                     <li class="timeline-heading text-center animate-box">
                         <div><h3>Work Experience</h3></div>
                     </li>
+
+                   
+                <!--  
+                    {% with counter=1 %}
+                    {% for w in workexp  %}
+                        {% with counter=counter|add:1 %}
+                        {% endwith %}
+                            <p> Hello...</p>
+                            {% if counter|divisibleby:2 %}
+                                
+                                <li class="timeline-inverted animate-box"></li>
+                                invert {{counter}}
+                            {% else %}
+                                
+                                <li class="animate-box timeline-unverted"></li>
+                                unvert {{counter}}
+                            {% endif %}
+
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3 class="timeline-title">{{ w.title }}</h3>
+                                    <span class="company">{{w.company_name}}, {{w.location}}   ( {{ w.start_date }} - {{ w.end_date }} )</span>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>{{ w.description }}</p>
+                                    <p><b><u>Skills</u> - </b>{{ w.skills }}</p>
+                                </div>
+                            </div>
+                    {% endfor %}
+                    {% endwith %}
+
+                -->
+                    <ul class="timeline">
+                        {% render_experience workexps %}
+                    </ul>
+<!-- 
                     <li class="animate-box timeline-unverted">
                         <div class="timeline-badge"><i class="icon-suitcase"></i></div>
                         <div class="timeline-panel">
@@ -63,7 +100,6 @@
                             </div>
                         </div>
                     </li>
-
 
                     <li class="timeline-inverted animate-box">
                         <div class="timeline-badge"><i class="icon-suitcase"></i></div>
@@ -79,7 +115,6 @@
                         </div>
                     </li>
 
-
                     <li class="animate-box timeline-unverted">
                         <div class="timeline-badge"><i class="icon-suitcase"></i></div>
                         <div class="timeline-panel">
@@ -93,7 +128,6 @@
                         </div>
                     </li>
 
-                    
                     <li class="timeline-inverted animate-box">
                         <div class="timeline-badge"><i class="icon-suitcase"></i></div>
                         <div class="timeline-panel">
@@ -107,6 +141,9 @@
                         </div>
                     </li>
 
+
+
+ -->
                     <br>
                     <li class="timeline-heading text-center animate-box">
                         <div><h3>Education</h3></div>
