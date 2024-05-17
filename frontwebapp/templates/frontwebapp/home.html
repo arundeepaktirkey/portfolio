@@ -52,150 +52,19 @@
                         <div><h3>Work Experience</h3></div>
                     </li>
 
-                   
-                <!--  
-                    {% with counter=1 %}
-                    {% for w in workexp  %}
-                        {% with counter=counter|add:1 %}
-                        {% endwith %}
-                            <p> Hello...</p>
-                            {% if counter|divisibleby:2 %}
-                                
-                                <li class="timeline-inverted animate-box"></li>
-                                invert {{counter}}
-                            {% else %}
-                                
-                                <li class="animate-box timeline-unverted"></li>
-                                unvert {{counter}}
-                            {% endif %}
-
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3 class="timeline-title">{{ w.title }}</h3>
-                                    <span class="company">{{w.company_name}}, {{w.location}}   ( {{ w.start_date }} - {{ w.end_date }} )</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>{{ w.description }}</p>
-                                    <p><b><u>Skills</u> - </b>{{ w.skills }}</p>
-                                </div>
-                            </div>
-                    {% endfor %}
-                    {% endwith %}
-
-                -->
+                  <!-- Here is the custom template tag for work experience -->
                     <ul class="timeline">
                         {% render_experience workexps %}
                     </ul>
-<!-- 
-                    <li class="animate-box timeline-unverted">
-                        <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">Team Member @ KFC</h3>
-                                <span class="company">Welcome Break, Leicester   ( Nov 2023 - Current )</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Dealing with customers in Front and coordinating with staffs for speedy delivery in Middle. </p>
-                                <p><b><u>Skills</u> - </b>Leadership, Management, Team Work, Tutoring, presenting</p>
-                            </div>
-                        </div>
-                    </li>
 
-                    <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">Team Member @ KFC</h3>
-                                <span class="company">Gastronomy ltd, Derby   ( June 2022 - Nov 2023)</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Dealing with customers in Front and coordinating with staffs for speedy delivery in Middle. </p>
-                                <p><b><u>Skills</u> - </b>Leadership, Management, Team Work, Tutoring, presenting</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="animate-box timeline-unverted">
-                        <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">Junior Developer</h3>
-                                <span class="company">Company Name - 2013 - 2015</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge"><i class="icon-suitcase"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">UI/UX Designer</h3>
-                                <span class="company">Company Name - 2010 - 2012</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </li>
-
-
-
- -->
                     <br>
                     <li class="timeline-heading text-center animate-box">
                         <div><h3>Education</h3></div>
                     </li>
-                    <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">Masters Degree</h3>
-                                <span class="company">University Name - 2007 - 2009</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="animate-box timeline-unverted">
-                        <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">Bachelors Degree</h3>
-                                <span class="company">University Name - 2002 - 2006</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted animate-box">
-                        <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">Diploma Course</h3>
-                                <span class="company">College Name - 1999 - 2001</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="animate-box timeline-unverted">
-                        <div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3 class="timeline-title">Graduation</h3>
-                                <span class="company">College Name - 1994 - 1998</span>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </li>
+                  <!-- Here is the custom template tag for education -->
+                    <ul class="timeline">
+                        {% render_education educations %}
+                    </ul>    
                 </ul>
             </div>
         </div>
