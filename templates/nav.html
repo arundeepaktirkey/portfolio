@@ -1,7 +1,29 @@
+{% load static %}
 <div class="fh5co-loader"></div>
 <div id="page">	
 	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url('static/frontwebapp/images/cover_bg_3.jpg')" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>                                                                   
+		<div class="overlay"></div> 
+		<br>  
+		<div class="btn-group dropright">
+			<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<img style="height: 20px; width: 20px; ;" src="{% static '/frontwebapp/images/nav-icon.jpg' %}" alt="Example Image" />
+			</button>
+			<div class="dropdown-menu">
+			  <!-- Dropdown menu links -->
+			  <p>
+				<ul class="fh5co-social-icons">
+					<!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+					<li><a href="#About-Me">About Me</a></li>
+					<li><a href="#Background-Experience">Background</a></li>
+					<li><a href="#Services">Services</a></li>
+					<li><a href="#Skills">Skills</a></li>
+					<li><a href="#Internships">Internships</a></li>
+					<li><a href="#Projects">Projects</a></li>
+					<li><a href="#Contact-Me">Contact Me</a></li>
+				</ul>
+			  </p>
+			</div>
+		</div>                                                                
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">

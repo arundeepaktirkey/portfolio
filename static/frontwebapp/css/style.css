@@ -289,6 +289,11 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 7em 0;
   clear: both;
 }
+
+.fh5co-bg-dark .fh5co-heading h3 {
+  color: #fff !important;
+}
+
 @media screen and (max-width: 768px) {
   #fh5co-about,
   #fh5co-resume,
@@ -1256,6 +1261,14 @@ input[type="text"] {
   outline: none;
   box-shadow: none;
   border-color: #FF9000;
+}
+
+.image-container {
+  height: 150px !important; /* Adjust the height as needed */
+  padding: 20px !important; /* Adjust the padding as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .row-pb-md {
