@@ -11,6 +11,7 @@
                     <h2>About Me</h2>
                 </div>
             </div>
+            <!-- (a) -->
             <div class="row">
                 <div class="col-md-4">
                     <ul class="info">
@@ -21,6 +22,7 @@
                         <li><span class="first-block">Address:</span><span class="second-block">JayHouse 88 - 90 London Road, Leicester, UK LE20RD</span></li>
                     </ul>
                 </div>
+                <!-- (b) -->
                 <div class="col-md-8">
                     <h2>Hello There!</h2>
                         <p class="text-justify">As a developer and data science enthusiast with a Master of Science degree in Information Technology from the University of Derby, I am looking for an opportunity to apply my data analysis and development skills at an entry level position. I graduated with Distinction in March 2023, and I have also completed a certification in Data Science with ML and AI from Ivy Professional School, where I gained hands-on experience in various data science projects using Python and SQL.
@@ -291,19 +293,6 @@
     </div>
 </section>
 
-<div id="fh5co-started" class="fh5co-bg-dark">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                <h2>Hire Me!</h2>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-                <p><a href="#" class="btn btn-default btn-lg">Contact Us</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <section id="Contact-Me">
     <div id="fh5co-consult">
         <div class="video fh5co-video" style="background-image: url(static/frontwebapp/images/cover_bg_1.jpg);">
@@ -311,43 +300,17 @@
         </div>
         <div class="choose animate-box">
             <h2>Contact</h2>
-            <form action="#">
-                <div class="row form-group">
-                    <div class="col-md-6">
-                        <input type="text" id="fname" class="form-control" placeholder="Your firstname">
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-6">
-                        <input type="text" id="lname" class="form-control" placeholder="Your lastname">
-                    </div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <input type="text" id="email" class="form-control" placeholder="Your email address">
-                    </div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
-                    </div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
-                    </div>
-                </div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
                 <div class="form-group">
                     <input type="submit" value="Send Message" class="btn btn-primary">
                 </div>
-
-            </form>	
+            </form>
         </div>
     </div>
 </section>
+
 <!-- <div id="map" class="fh5co-map"></div>
 </div> -->
 
