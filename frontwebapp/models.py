@@ -7,7 +7,7 @@ class WorkExp(models.Model):
     location = models.CharField(max_length=100)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)   
-    description = models.TextField(max_length=500)
+    description = models.TextField(max_length=1000)
     skills = models.CharField(max_length=300)
 
     @property
@@ -28,7 +28,7 @@ class Education(models.Model):
     location = models.CharField(max_length=100)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)   
-    description = models.TextField(max_length=500)
+    description = models.TextField(max_length=1000)
     skills = models.CharField(max_length=300)
 
     @property

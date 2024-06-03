@@ -1,5 +1,7 @@
 {% extends 'main.html' %}
 {% load my_custom_tags %}
+{% load form_filters %}
+
 {% load static %}
 
 {% block content %}
@@ -302,7 +304,16 @@
             <h2>Contact</h2>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {% if field.help_text %}
+                            <small class="form-text text-muted">{{ field|add_placeholder:field.help_text }}</small>
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
                 <div class="form-group">
                     <input type="submit" value="Send Message" class="btn btn-primary">
                 </div>
@@ -318,14 +329,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>&copy; 2017 Free HTML5 Template. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.com" target="_blank">Unsplash</a></p>
+                <p>&copy; 2017 Free HTML5 Template. All Rights Reserved. <br>Taken Design help from <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> </p>
             </div>
         </div>
     </div>
 </div>
 
 <div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+    <a href="#" class="js-gotop";"><i class="icon-arrow-up22"></i></a>
 </div>
 
 {% endblock content %}

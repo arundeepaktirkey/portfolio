@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .models import WorkExp, Education, MyServices, Internships, Projects
-from .forms import contactsforms
+from .forms.contactsforms import ContactForm
 # Create your views here.
 def home(request):
     workex = WorkExp.objects.all()
@@ -11,12 +11,12 @@ def home(request):
     projects = Projects.objects.all()
 
     if request.method == 'POST':
-        form = contactsforms(request.POST)
+        form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('frontwebapp/home.html')  # Replace 'success_url' with the desired URL name
     else:
-        form = contactsforms()
+        form = ContactForm()
 
     context = {
         'workexps': workex,

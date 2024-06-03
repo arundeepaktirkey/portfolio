@@ -68,6 +68,7 @@ TEMPLATES = [
             ],
             'builtins': [
                 'frontwebapp.templatetags.my_custom_tags',
+                'frontwebapp.templatetags.form_filters',
             ],
         },
     },

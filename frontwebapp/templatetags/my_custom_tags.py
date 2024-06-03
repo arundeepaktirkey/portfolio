@@ -95,7 +95,7 @@ def render_internships(internships):
                     <div class="col-md-10 text-center col-padding animate-box">
                         <a href="{internship.web_link}" class="work" style="background-image: url(static/frontwebapp/images/{internship.bg_img})">
                             <div class="desc">
-                                <div style="width: 1000px; height: 500px; overflow-x: scroll; white-space: nowrap;" style="align-self: center;">
+                                <div style="height: 500px; width: 1000px; overflow-x: scroll; white-space: nowrap;" style="align-self: center;">
                     
                     '''
         for image in internship.images.all():
@@ -119,7 +119,7 @@ def render_internships(internships):
                 </div>
             '''
     return mark_safe(output)
-
+    
 @register.simple_tag
 def render_projects(projects):
     output = ''
