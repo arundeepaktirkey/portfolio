@@ -14,6 +14,6 @@ def home(request):
         'educations' : educations,
         'services' : services,
         'internships': internships,
-        'projects': projects
+        'projects': projects,
         }
     return render(request, 'frontwebapp/home.html', context = context)

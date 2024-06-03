@@ -120,11 +120,6 @@ def render_internships(internships):
             '''
     return mark_safe(output)
 
-from django import template
-from django.utils.safestring import mark_safe
-
-register = template.Library()
-
 @register.simple_tag
 def render_projects(projects):
     output = ''
@@ -146,8 +141,8 @@ def render_projects(projects):
                         <ul class="stuff">
         '''
 
-        for item in project.description_items:
-            output += f'<li><p class="text-justify">{item}</p></li>'
+        for item in project.descriptions.all():
+            output += f'<li><p class="text-justify">{item.text}</p></li>'
 
         output += f'''
                         </ul>
