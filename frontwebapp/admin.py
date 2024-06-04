@@ -32,7 +32,6 @@ admin.site.register(MyServices,ServicesAdmin)
 
 admin.site.register(Internships, InternshipsAdmin)
 admin.site.register(Image)
-
 admin.site.register(Projects, ProjectAdmin)
 admin.site.register(Description)
 

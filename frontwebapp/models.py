@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 # Create your models here.
 class WorkExp(models.Model):
@@ -28,8 +29,8 @@ class Education(models.Model):
     location = models.CharField(max_length=100)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)   
-    description = models.TextField(max_length=1000)
-    skills = models.CharField(max_length=300)
+    description = models.TextField(max_length=1000,null=True, blank=True)
+    skills = models.CharField(max_length=300,null=True, blank=True)
 
     @property
     def formatted_start_date(self):
@@ -48,12 +49,20 @@ class MyServices(models.Model):
     description = models.TextField(max_length=500)
 
 class Internships(models.Model):
-    web_link = models.CharField(max_length=100, blank=True, default='#')
+    web_link = models.CharField(max_length=200, blank=True, default='#')
     bg_img = models.ImageField(upload_to='internships_imgs/')
     images = models.ManyToManyField('Image', blank=True)
+    int_name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return f"{self.int_name}"
+
 
 class Image(models.Model):
     image = models.ImageField(upload_to='internships_imgs/')
+
+    def __str__(self):
+        return f"Image: {os.path.basename(self.image.name)}"
 
 class Projects(models.Model):
     project_link = models.CharField(max_length=100, default='#')
@@ -64,6 +73,7 @@ class Projects(models.Model):
     likes = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     descriptions = models.ManyToManyField('Description', blank=True)
+    
 
 class Description(models.Model):
     text = models.TextField()

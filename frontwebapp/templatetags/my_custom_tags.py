@@ -1,4 +1,5 @@
 from django import template
+from django.utils.html import linebreaks
 from django.utils.safestring import mark_safe
 
 register = template.Library()
@@ -21,7 +22,7 @@ def render_experience(workexps):
                         <span class="company">{experience.company_name}, {experience.location}  ({experience.formatted_start_date} - {experience.formatted_end_date})</span>
                     </div>
                     <div class="timeline-body">
-                        <p>{experience. description}</p>
+                        <p>{linebreaks(experience.description)}</p>
                         <p><b><u>Skills</u> - </b>{experience.skills}</p>
                     </div>
                 </div>
@@ -45,13 +46,16 @@ def render_education(educations):
                         <h3 class="timeline-title">{education.degree}</h3>
                         <span class="company">{education.university}, {education.location}  ({education.formatted_start_date} - {education.formatted_end_date})</span>
                     </div>
-                    <div class="timeline-body">
-                        <p>{education. description}</p>
-                        <p><b><u>Skills</u> - </b>{education.skills}</p>
-                    </div>
-                </div>
-            </li>
-        '''
+                    '''
+        if education.skills != None:
+                    output += f'''
+                                <div class="timeline-body">
+                                    <p>{linebreaks(education. description)}</p>
+                                    <p><b><u>Skills</u> - </b>{education.skills}</p>
+                                </div>
+                            </div>
+                        </li>
+                    '''
     return mark_safe(output)
 
 
@@ -108,12 +112,9 @@ def render_internships(internships):
                             <h3 style="font-size: 24px;
                                         font-weight: 400;
                                         color: #fff;">
-                                Project Name
+                                <br>
+                                {internship.int_name}
                             </h3>
-                            <span style="font-size: 16px;
-                                        color: rgba(255, 255, 255, 0.7);">
-                                Illustration
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -134,7 +135,13 @@ def render_projects(projects):
         output += f'''
             <div class="col-md-6">
                 <div class="fh5co-blog animate-box">
-                    <a href="{project.project_link}" class="blog-bg" style="background-image: url(static/frontwebapp/images/{project.image_url});"></a>
+                    <a href="{project.project_link}" class="blog-bg" style="background-image: url(static/frontwebapp/images/{project.image_url});
+                                                                            background-size: contain; 
+                                                                            background-position: center; 
+                                                                            background-repeat: no-repeat; 
+                                                                            display: block; 
+                                                                            height: 500px;">
+                    </a>
                     <div class="blog-text">
                         <span class="posted_on">{project.start_date} - {project.end_date}</span>
                         <h3><a href="{project.project_link}">{project.title}</a></h3>
@@ -142,7 +149,7 @@ def render_projects(projects):
         '''
 
         for item in project.descriptions.all():
-            output += f'<li><p class="text-justify">{item.text}</p></li>'
+            output += f'<li><p class="text-justify">{linebreaks(item.text)}</p></li>'
 
         output += f'''
                         </ul>
