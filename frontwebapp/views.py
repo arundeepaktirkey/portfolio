@@ -1,7 +1,9 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 from .models import WorkExp, Education, MyServices, Internships, Projects
 from .forms.contactsforms import ContactForm
+
 # Create your views here.
 def home(request):
     workex = WorkExp.objects.all()
@@ -14,7 +16,8 @@ def home(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('frontwebapp/home.html')  # Replace 'success_url' with the desired URL name
+            #return redirect('')  # Replace 'success_url' with the desired URL name
+            return HttpResponseRedirect('/')
     else:
         form = ContactForm()
 
